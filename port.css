@@ -1,0 +1,557 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+.container {
+    max-width: 95vw;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+.navi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sumit{
+    color: red;
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+}
+
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.nav-menu li a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background: #49cb51;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.nav-menu li a:hover {
+    color: #0cfb4f;
+}
+
+.nav-menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* Toggle menu icon */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        color: white;
+    }
+}
+
+
+
+
+/* About section */
+#about {
+    background-color: #f5f5f5;
+    padding: 60px 0 20px 0;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.about-text span {
+    font-weight: bold;
+    color: #000000;
+}
+
+.about-image {
+    flex: .7;
+    text-align: center;
+    position: relative;
+    margin-bottom: 34px;
+}
+
+.about-image img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 34px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: black;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        padding: 0;
+        text-align: center;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .about-image img {
+        max-width: 200px;
+        margin-top: 20px;
+    }
+}
+
+
+.social-links {
+    display: flex;
+    gap: 34px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+    background-color: #214a4a;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+.fb{
+    font-size: 1.8rem;
+}
+
+.social-link:hover {
+    background-color: #000000;
+}
+
+
+
+/* Skillset section */
+#skillset {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+.skillset-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.container h2 {
+    margin-bottom: 34px;
+    font-size: 2rem;
+}
+
+.skill h3 {
+    margin-bottom: 34px;
+}
+
+.skill ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill ul li {
+    margin-bottom: 17px;
+    position: relative;
+}
+
+.skill ul li span {
+    position: absolute;
+    right: 0;
+    font-weight: bold;
+    color: #2d2b2b;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .skillset-content {
+        flex-direction: column;
+    }
+
+    .skill {
+        margin-bottom: 20px;
+    }
+
+    .skill ul li {
+        margin-bottom: 10px;
+    }
+
+    .skill ul li span {
+        position: static;
+        display: block;
+        font-weight: normal;
+        color: #333;
+        margin-top: 5px;
+    }
+}
+
+
+
+
+/* project section css */
+
+.title {
+    width: 100%;
+    margin: auto;
+    height: 9vh;
+    font-size: 2rem;
+    position: relative;
+    margin-left: 20px;
+}
+
+.project-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    /* height: 59vh; */
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.33% - 20px);
+    height: 59vh;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.project-card h2 {
+    margin-top: 10px;
+}
+
+.project-card p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(50% - 20px);
+    }
+}
+
+
+
+
+
+/* Education section */
+#education {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.education-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.education-item {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.education-item h3 {
+    padding-bottom: 15px;
+    font-size: 26px;
+}
+
+.education-item p {
+    padding: 9px 0;
+}
+
+
+.hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .education-content {
+        flex-direction: column;
+    }
+
+    .education-item {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+/* Services section */
+#services {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 34px;
+}
+
+.service {
+    flex: 1;
+    padding: 34px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service h3 {
+    font-size: 24px;
+    margin-bottom: 17px;
+}
+
+.service p {
+    color: #666;
+    line-height: 2;
+}
+
+
+
+
+
+/* Contact section */
+#contact {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #a7a7a7;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #555;
+}
+
+
+
+
+/* Footer section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Back to Top button */
+#back-to-top {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #333;
+}
+
+
+.break {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+
+.card-front img {
+    height: 20vh;
+    background: transparent;
+}
+
+.foot{
+    display: flex;
+    justify-content: space-around;
+}
